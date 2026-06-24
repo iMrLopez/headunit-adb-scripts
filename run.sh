@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.0.2"
+VERSION="1.0.3"
 CATALOG_URL="https://raw.githubusercontent.com/iMrLopez/headunit-adb-scripts/refs/heads/main/app-catalog.json"
 
 TEMP_DIR=$(mktemp -d)
@@ -29,6 +29,10 @@ cleanup() {
 }
 trap 'echo ""; echo "Cancelled, cleaning up..."; exit 130' INT TERM
 trap cleanup EXIT
+
+# When piped via "curl | bash", stdin is the pipe carrying the script so read
+# gets EOF immediately. Redirect stdin to the terminal so all prompts work.
+exec < /dev/tty
 
 echo "Fetching app catalog..."
 APPS_CATALOG=$(curl -fsSL -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "$CATALOG_URL") || { echo "Failed to fetch app catalog." >&2; exit 1; }
