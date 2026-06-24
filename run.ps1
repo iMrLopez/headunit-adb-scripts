@@ -5,6 +5,7 @@ $CatalogUrl = "https://raw.githubusercontent.com/iMrLopez/headunit-adb-scripts/r
 $TempDir = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
 New-Item -ItemType Directory -Path $TempDir | Out-Null
 $AdbCmd = $null
+$_Completed = $false
 
 Write-Host ""
 Write-Host "╔══════════════════════════════════════════════════════╗" -ForegroundColor Cyan
@@ -213,6 +214,12 @@ try {
         & $AdbCmd -s $DeviceIp install $QueuePaths[$i]
     }
 
+    $_Completed = $true
+
 } finally {
+    if (-not $_Completed) {
+        Write-Host ""
+        Write-Host "Cancelled, cleaning up..." -ForegroundColor DarkGray
+    }
     Invoke-Cleanup
 }

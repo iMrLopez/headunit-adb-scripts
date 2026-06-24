@@ -26,6 +26,7 @@ echo "Using temp directory: $TEMP_DIR"
 cleanup() {
     [ -d "$TEMP_DIR" ] && rm -rf "$TEMP_DIR"
 }
+trap 'echo ""; echo "Cancelled, cleaning up..."; exit 130' INT TERM
 trap cleanup EXIT
 
 echo "Fetching app catalog..."
