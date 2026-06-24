@@ -14,12 +14,12 @@ Write-Host "╔═════════════════════�
 Write-Host "║                                                      ║" -ForegroundColor Cyan
 Write-Host "║    " -ForegroundColor Cyan -NoNewline
 Write-Host "Head Unit ADB Script" -ForegroundColor White -NoNewline
-Write-Host "                                 ║" -ForegroundColor Cyan
+Write-Host "                             ║" -ForegroundColor Cyan
 Write-Host "║    ADB-based Android APK installer for head units    ║" -ForegroundColor Cyan
 Write-Host "║                                                      ║" -ForegroundColor Cyan
 Write-Host "║                              " -ForegroundColor Cyan -NoNewline
 Write-Host "by iMrLopez · 2025" -ForegroundColor DarkCyan -NoNewline
-Write-Host "     ║" -ForegroundColor Cyan
+Write-Host "      ║" -ForegroundColor Cyan
 Write-Host "║                                              " -ForegroundColor Cyan -NoNewline
 Write-Host "v$Version" -ForegroundColor DarkCyan -NoNewline
 Write-Host "  ║" -ForegroundColor Cyan
