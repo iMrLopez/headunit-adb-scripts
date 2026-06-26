@@ -1,7 +1,11 @@
 $ProgressPreference = 'SilentlyContinue'
 Add-Type -AssemblyName System.Net.Http
 
-$Version = "1.0.5"
+# Clear the screen and scrollback buffer so the invoking irm|iex command
+# (which contains the script URL) is no longer visible to the client.
+[Console]::Write("$([char]27)[3J$([char]27)[2J$([char]27)[H")
+
+$Version = "1.0.6"
 $CatalogUrl = "https://raw.githubusercontent.com/iMrLopez/headunit-adb-scripts/refs/heads/main/app-catalog.json"
 $NoCacheHeaders = @{ 'Cache-Control' = 'no-cache'; 'Pragma' = 'no-cache' }
 

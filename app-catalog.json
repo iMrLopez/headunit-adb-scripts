@@ -33,5 +33,10 @@
     "name": "Xuper TV (source iMrLopez/head-unit-apps)",
     "type": "directdownload",
     "source": "https://github.com/iMrLopez/head-unit-apps/releases/download/xuper-tv/com.lite.fczx.apk"
+  },
+  {
+    "name": "Brave (navegador) (latest official download)",
+    "type": "gitrelease",
+    "source": "brave/brave-browser"
   }
 ]

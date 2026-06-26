@@ -2,7 +2,11 @@
 
 main() {
 
-VERSION="1.0.5"
+# Clear the screen and scrollback buffer so the invoking curl|bash command
+# (which contains the script URL) is no longer visible to the client.
+printf '\033[3J\033[2J\033[H'
+
+VERSION="1.0.6"
 CATALOG_URL="https://raw.githubusercontent.com/iMrLopez/headunit-adb-scripts/refs/heads/main/app-catalog.json"
 
 TEMP_DIR=$(mktemp -d)
